@@ -1,4 +1,4 @@
-# Photo-Organizer
+# Photo Organizer App
 
 The problem this app solves involves the need to sort photos and add a unique name to each photo to identify it accurately.
 Cameras allow the user to reset the file name counter, resulting in different photos existing under the same name.
@@ -12,3 +12,17 @@ If the camera allows you to shoot and save photos in two formats, JPEG and RAW, 
 This solution is oriented mainly to users of Unix/Linux systems, although it can be adapted for Windows operating system.
 
 The Python programming language version 3.13 with standard libraries will be used exclusively for implementation. The metadata stored in the photo will be used to read the date of the photo. SQLite database will be used as temporary data storage during file structure reading and analysis. To create a graphical interface tkinter will be used. 
+
+## Definition of the input data and settings
+- The root folder where the files to be processed are located.
+- The folder where the files are to be copied or moved.
+- The file format must be selected from the list.
+- Check box selection of the need to add the full date to the file name. 
+- Check box to select whether to move files or only copy.
+
+## Database definition
+For operation only one table with the following fields is needed:
+- absolute path to the file
+- file name
+- creation date
+- creation time
