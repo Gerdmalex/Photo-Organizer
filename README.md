@@ -19,3 +19,10 @@ The Python programming language version 3.13 with standard libraries will be use
 - The file format must be selected from the list.
 - Check box selection of the need to add the full date to the file name. 
 - Check box to select whether to move files or only copy.
+
+## Database definition
+For operation only one table with the following fields is needed:
+- absolute path to the file
+- file name
+- creation date
+- creation time
