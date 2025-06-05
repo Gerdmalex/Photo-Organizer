@@ -35,15 +35,15 @@ def read_files(source, ext):
                 db.insert(dirpath, f_name, f_date, f_time)
 
 
-def process_files(destination, ext, cp=True, rename=False):
+def order_files(destination, ext, cp=True, rename=False):
     """
     The function reads datasets of file data from the database, \
     sorted by creation date, and performs copying or moving. \
     In addition, the necessary folders are created.
 
     Args:
-        destination (int): Path to the destination folder.
-        ext (int): Extension of the file.
+        destination (str): Path to the destination folder.
+        ext (str): Extension of the file.
         cp (bool): Sets whether files are to be copied or moved.
         rename (bool): Sets whether files should be renamed or keep their original names.
     """
@@ -80,3 +80,21 @@ def process_files(destination, ext, cp=True, rename=False):
 
     print()
     db.close()
+
+
+def start_process(source, destination, extension, copy_files, rename_files):
+    """
+    The function combines the two processes by calling the functions one after the other \
+    and informing the user about the status of the operations.
+
+    Args:
+        source (str): Path to the source folder.
+        destination (str): Path to the destination folder.
+        extension (str): Extension of the file.
+        copy_files (bool): Sets whether files are to be copied or moved.
+        rename_files (bool): Sets whether files should be renamed or keep their original names.
+    """
+    read_files(source, extension)
+    print('File reading complete')
+    order_files(destination, extension, copy_files, rename_files)
+    print('Successful completion of processing')
